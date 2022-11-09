@@ -3,10 +3,10 @@ class RecipesController < ActionController::Base
     if current_user.nil?
       redirect_to new_user_session_path
     else
-    @user = current_user
-    @recipes = @user.recipes.all
+      @user = current_user
+      @recipes = @user.recipes.all
+    end
   end
-end
 
   def show
     @recipe = Recipe.find(params[:id])
