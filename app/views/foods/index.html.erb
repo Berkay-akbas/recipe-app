@@ -1,1 +1,27 @@
-<h1> This is foods index page </h1>
+<section class="body">
+  <div class="add-btn">
+    <%= link_to 'foods/new', :remote => true do %>
+      <input type="button" class="add-food-button" value="Add Food">
+    <% end %>
+  </div>
+  <div class="table-holder">
+    <table class="foods-table">
+      <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th>Unit Price</th>
+        <th>Action</th>
+      </tr>
+      <% @foods.each do |food| %>
+      <tr>
+        <td><%=food.name%></td>
+        <td><%=food.measurement_unit%></td>
+        <td><%=food.price%>$</td>
+        <td>
+          <%= button_to "Delete", food_path(food.id), :method => :delete, class: "delete-button" %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</section>
