@@ -14,5 +14,4 @@ Rails.application.routes.draw do
    resources :public, only: [:index]
    resources :general, only: [:index]
 
-
 end
