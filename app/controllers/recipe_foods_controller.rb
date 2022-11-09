@@ -7,7 +7,7 @@ class RecipeFoodsController < ActionController::Base
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    recipe_food = @recipe.recipe_foods.create(recipe_params)
+    recipe_food = @recipe.recipeFoods.create(recipe_params)
     respond_to do |format|
       format.html do
         if recipe_food.save

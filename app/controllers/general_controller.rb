@@ -8,7 +8,7 @@ class GeneralController < ActionController::Base
     @total = @recipes.map { |x| Recipe.total_value(x.id) }.reduce(:+)
     @food_count = 0
     @recipes.each do |recipe|
-      recipe_foods = recipe.recipe_foods
+      recipe_foods = recipe.recipeFoods
       recipe_foods.each do |_food|
         @food_count += 1
       end
