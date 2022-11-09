@@ -5,5 +5,14 @@ Rails.application.routes.draw do
   # root "articles#index"
   devise_for :users
   root :to => "foods#index"
-  resources :foods, only: [:index, :show]
+  
+   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+   resources :foods, only: [:index, :new, :create, :destroy]
+   resources :recipes, only: [:index, :new, :create, :destroy, :show] do
+     resources :recipe_foods, only: [:new, :edit, :create, :destroy, :update]
+   end
+   resources :public, only: [:index]
+   resources :general, only: [:index]
+
+
 end
