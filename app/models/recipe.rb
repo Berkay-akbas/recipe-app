@@ -10,7 +10,7 @@ class Recipe < ApplicationRecord
 
   def self.total_value(id)
     recipe = Recipe.find(id)
-    recipe_foods = recipe.recipeFoods
+    recipe_foods = recipe.recipe_foods
     @total = recipe_foods.map { |x| RecipeFood.value(x.id) }.reduce(:+)
     @total = if @total.nil?
                0

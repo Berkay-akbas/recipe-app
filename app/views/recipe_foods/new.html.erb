@@ -15,7 +15,7 @@
   <section class="body">  
   <h1>Add a new Ingredient</h1>
 
-  <%= form_with model: [@recipe, @recipe.recipeFoods.create] do |f| %>
+  <%= form_with model: [@recipe, @recipe.recipe_foods.create] do |f| %>
 
   <div class="mb-3">
     <%= f.label :food%>

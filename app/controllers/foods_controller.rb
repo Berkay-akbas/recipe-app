@@ -1,6 +1,9 @@
 class FoodsController < ApplicationController
+
+  
   def index
-    @foods = current_user.foods.order(created_at: :desc)
+    @user = current_user
+    @foods = @user.foods.all
   end
 
   def new
