@@ -91,4 +91,8 @@ production:
   <<: *default
   database: recipe_app_production
   username: rubyonrails
+<<<<<<< HEAD
   password: 1234
+=======
+  password: 1234
+>>>>>>> f45c4f127bbcaca81a158c2a18bec8a0cb3fa962
