@@ -3,6 +3,7 @@ class Inventory < ApplicationRecord
   has_many :inventory_foods, foreign_key: :inventory_id, dependent: :destroy
   has_many :foods, through: :inventory_foods
 
+
   
   def recent_three_inventories
     inventories.order(created_at: :desc).limit(3)
@@ -12,3 +13,5 @@ class Inventory < ApplicationRecord
     role == 'admin'
   end
 end
+
+
