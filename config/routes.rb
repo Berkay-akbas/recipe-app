@@ -11,6 +11,9 @@ Rails.application.routes.draw do
    resources :recipes, only: [:index, :new, :create, :destroy, :show] do
      resources :recipe_foods, only: [:new, :edit, :create, :destroy, :update]
    end
+  resources :inventory  do
+      resources :inventory_foods, only: [:new, :edit, :create, :destroy, :update]
+   end
    resources :public, only: [:index]
    resources :general, only: [:index]
 
