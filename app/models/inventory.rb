@@ -3,6 +3,7 @@ class Inventory < ApplicationRecord
   has_many :inventory_foods, foreign_key: :inventory_id, dependent: :destroy
   has_many :foods, through: :inventory_foods
 
+<<<<<<< HEAD
   
   def recent_three_inventories
     inventories.order(created_at: :desc).limit(3)
@@ -12,3 +13,26 @@ class Inventory < ApplicationRecord
     role == 'admin'
   end
 end
+=======
+  validates :name, presence: true
+
+ 
+  def self.recent_inventries(id)
+    inventory = Inventory.find(id)
+    inventory_foods = inventory.recipeFoods
+    @total = inventory_foods.map { |x| InventoryFood.value(x.id) }.reduce(:+)
+    @total = if @total.nil?
+               0
+             else
+               @total
+             end
+  end
+
+  def self.items(id)
+    inventory = Inventory.find(id)
+    inventory.inventoryFoods.count
+  end
+
+
+end
+>>>>>>> 56e363be350bd15890f75fd6cee91721ee58cad8
