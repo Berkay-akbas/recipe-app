@@ -12,7 +12,7 @@ class InventoryController < ApplicationController
     end
     ## Add show for inventory
     def show
-      @inventory = Inventory.find(params[:id])
+        @inventory = Inventory.find(params[:id])
     end
 
     ## Add new for inventory
@@ -39,11 +39,11 @@ class InventoryController < ApplicationController
     end
     ## Add destroy for inventory
     def destroy
-      @user = current_user
-      @inventory = @user.inventories.find(params[:id])
-      @inventory.destroy
-      redirect_to inventory_path
-      flash[:success] = 'Inventory was deleted!'
+        @user = current_user
+        @inventory = @user.inventories.find(params[:id])
+        @inventory.destroy
+        redirect_to inventory_path
+        flash[:success] = 'Inventory was deleted!'
     end
   
     private

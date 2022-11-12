@@ -1,11 +1,11 @@
 <section class="body">
   <div class="add-btn">
     <%= link_to 'foods/new', :remote => true do %>
-      <input type="button" class="add-food-button" value="Add Food">
+      <input type="button" class="btn btn-primary" value="Add Food">
     <% end %>
   </div>
-  <div class="table-holder">
-    <table class="foods-table">
+  <div class= "table">
+   <table class="table table-bordered">
       <tr>
         <th>Food</th>
         <th>Measurement Unit</th>
@@ -18,7 +18,7 @@
         <td><%=food.measurement_unit%></td>
         <td><%=food.price%>$</td>
         <td>
-          <%= button_to "Delete", food_path(food.id), :method => :delete, class: "delete-button" %>
+          <%= button_to "Delete", food_path(food.id), :method => :delete, class: "btn btn-danger" %>
         </td>
       </tr>
       <% end %>

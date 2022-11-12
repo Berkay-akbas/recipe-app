@@ -27,8 +27,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_085910) do
   create_table "inventories", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
+    t.bigint "food_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["food_id"], name: "index_inventories_on_food_id"
     t.index ["user_id"], name: "index_inventories_on_user_id"
   end
 
@@ -77,6 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_085910) do
   end
 
   add_foreign_key "foods", "users"
+  add_foreign_key "inventories", "foods"
   add_foreign_key "inventories", "users"
   add_foreign_key "inventory_foods", "foods"
   add_foreign_key "inventory_foods", "inventories"

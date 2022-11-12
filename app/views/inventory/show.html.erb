@@ -3,45 +3,22 @@
       <h1><%=@inventory.name%></h1>
     </div>
 
-
     <div class="grid">
-        
-      <%= link_to new_inventory_inventory_food_path(@inventory.id), :remote => true do %>
-        <input type="button" class="btn btn-primary" value="Add Food">
-     
-      <%end%>
-
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" value="<%=@inventory.name%>" disabled>
+      </div>
+      
     </div>
 
-      <hr>
+    <div class="add-btn">
+      <%= link_to edit_inventory_path(@inventory.id), :remote => true do %>
+        <input type="button" class="btn btn-primary" value="Edit Inventory">
+      <% end %>
 
-          <div class="table">
-      <table class="table table-bordered">
-      <tr>
-        <th>Food</th>
-        <th>Quantity</th>
-        <th>Value</th>
-        <th>Action</th>
-      </tr>
-
-      <% @inventory.inventoryFoods.each do |inventory_food| %>
-      <tr>
-        <td><%= inventory_food.food.name %></td>
-        <td><%= inventory_food.quantity %></td>
-        <td><%= inventory_food.value %></td>
-        <td>
-          <%= link_to edit_inventory_inventory_food_path(@inventory.id, inventory_food.id), :remote => true do %>
-            <input type="button" class="btn btn-primary" value="Edit">
-          <%end%>
-          <%= link_to inventory_inventory_food_path(@inventory.id, inventory_food.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <input type="button" class="btn btn-primary" value="Delete">
-          <%end%>
-        </td>
-      </tr>
-      <%end%>
-
-      </table>
+      <%= button_to "Delete", inventory_path(@inventory.id), html: {'data-turbo' => "false"}, :method => :delete, class: "btn btn-danger" %>
     </div>
+    
     
     
 </section>
