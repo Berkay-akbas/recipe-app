@@ -3,13 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
-gem 'cancancan'
-
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'devise'
-
-gem 'webpacker'
 
 gem 'dotenv-rails'
 

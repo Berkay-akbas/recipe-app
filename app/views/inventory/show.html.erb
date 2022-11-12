@@ -1,0 +1,24 @@
+ <section class="body">
+    <div class="heading">
+      <h1><%=@inventory.name%></h1>
+    </div>
+
+    <div class="grid">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" value="<%=@inventory.name%>" disabled>
+      </div>
+      
+    </div>
+
+    <div class="add-btn">
+      <%= link_to edit_inventory_path(@inventory.id), :remote => true do %>
+        <input type="button" class="btn btn-primary" value="Edit Inventory">
+      <% end %>
+
+      <%= button_to "Delete", inventory_path(@inventory.id), html: {'data-turbo' => "false"}, :method => :delete, class: "btn btn-danger" %>
+    </div>
+    
+    
+    
+</section>
