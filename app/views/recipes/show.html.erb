@@ -12,26 +12,8 @@
 
   <body>
     <%= render "layouts/navbar" %>
-    <div class="modal-background">
-    <div class="modal">
-      <div class="modal-header">
-        <h2 class="modal-title">Generating shopping list</h2>
-        <div class="X">
-          <p >X</p>
-        </div>
-      </div>
-      <div class='modal-body'>
-        <h3>Choose an inventory to use</h3>
-        <%= form_with  url: "/recipes/#{@recipe.id}/generate" do |form| %>
-          <%= form.label :inventory %>
-          <%= form.collection_select :inventory, @inventories ,:id , :name %>
-          <%= form.submit "Generate", class: "create_btn" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+    
     <section class="body">
-  <%= button_tag "Generate shopping list", id: "modal-displayer" , class: 'create_btn down'%>
     <div class="heading">
       <h1><%=@recipe.name%></h1>
     </div>
@@ -61,6 +43,11 @@
     </div>
 
     <div class="grid">
+      <%= link_to general_index_path, :remote => true do %>
+      <input type="button" class="btn btn-primary" value="Generate Shopping List">
+      <%end%>
+
+      
       <%= link_to new_recipe_recipe_food_path(@recipe.id), :remote => true do %>
         <input type="button" class="btn btn-primary" value="Add Ingredients">
      
@@ -79,7 +66,7 @@
         <th>Action</th>
       </tr>
 
-      <% @recipe.recipe_foods.each do |recipe_food| %>
+      <% @recipe.recipeFoods.each do |recipe_food| %>
       <tr>
         <td><%=Food.find(recipe_food.food_id).name%></td>
         <td><%=recipe_food.quantity%> <%=Food.find(recipe_food.food_id).measurement_unit%></td>
@@ -95,9 +82,8 @@
       
       </table>
     </div>
-
-
     
     </section>
-<%= javascript_pack_tag 'modal' %>
+
   </body>
+</html>

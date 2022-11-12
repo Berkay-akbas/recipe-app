@@ -19,6 +19,7 @@ class InventoriesController < ApplicationController
   def create
     @inventory = Inventory.new
     user = current_user
+    description = params[:description]
     name = params[:name]
     @inventory.name = name
     @inventory.user_id = user.id
@@ -65,7 +66,6 @@ class InventoriesController < ApplicationController
     end
   end
 
-  # rubocop:disable all
   def compare
     @result = []
     @amount = 0

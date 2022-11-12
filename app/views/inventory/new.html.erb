@@ -3,7 +3,7 @@
     <h1>Add Inventory</h1>
   </div>
   <div class="grid">
-    <%= form_with for: @inventory, url: inventories_path do |f| %>
+    <%= form_with for: @inventory, url: inventory_index_path do |f| %>
       <div class="form-group">
         <%= f.label :name %>
         <%= f.text_field :name, class: "form-control" %>

@@ -1,10 +1,14 @@
 <section class="body">
+
     <div class="add-btn">
       <%= link_to new_inventory_path, :remote => true do %>
         <input type="button" class="btn btn-primary" value="Add Inventory">
       <% end %>
     </div>
+     
       <% @inventories.each do |inventory| %>
+     
+
         <div class= "recipe-border">
           <div>
            <%= link_to inventory_path(inventory.id), :remote => true do %>
@@ -12,6 +16,11 @@
             <% end %>
             <%= button_to "Delete", inventory_path(inventory.id), html: {'data-turbo' => "false"}, :method => :delete, class: "btn btn-danger" %>
           </div>
+    
         </div> 
+      
       <% end %>
+
+
+
 </section>

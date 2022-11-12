@@ -11,7 +11,3 @@ class Ability
     can %i[read update destroy create], Recipe, user: user
     can %i[read update destroy create], Food, user: user
     can %i[read update destroy create], Inventory, user: user
-
-    can :manage, :all
-  end
-end
