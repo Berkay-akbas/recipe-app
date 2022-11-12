@@ -10,6 +10,13 @@ class RecipesController < ActionController::Base
 
   def show
     @recipe = Recipe.find(params[:id])
+    @inventories = Inventory.where(user_id: @current_user.id) if user_signed_in?
+  end
+
+  def create_shopping_list
+    @recipe = Recipe.find(params[:recipe_id])
+    @inventory_id = params[:inventory]
+    redirect_to("/inventories/compare/#{@recipe.id}/#{@inventory_id}")
   end
 
   def new
