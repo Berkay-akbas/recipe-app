@@ -19,7 +19,6 @@ class InventoriesController < ApplicationController
   def create
     @inventory = Inventory.new
     user = current_user
-    description = params[:description]
     name = params[:name]
     @inventory.name = name
     @inventory.user_id = user.id
@@ -66,6 +65,7 @@ class InventoriesController < ApplicationController
     end
   end
 
+  # rubocop:disable all
   def compare
     @result = []
     @amount = 0
@@ -101,4 +101,5 @@ class InventoriesController < ApplicationController
       redirect_to(request.env['HTTP_REFERER'], notice: 'Not Access')
     end
   end
+  # rubocop:enable all
 end

@@ -5,7 +5,6 @@ class Inventory < ApplicationRecord
 
   validates :name, presence: true
 
- 
   def self.recent_inventries(id)
     inventory = Inventory.find(id)
     inventory_foods = inventory.recipeFoods
@@ -21,6 +20,4 @@ class Inventory < ApplicationRecord
     inventory = Inventory.find(id)
     inventory.inventoryFoods.count
   end
-
-
 end
