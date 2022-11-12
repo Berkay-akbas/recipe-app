@@ -45,6 +45,15 @@ class InventoryController < ApplicationController
         redirect_to inventory_path
         flash[:success] = 'Inventory was deleted!'
     end
+
+    ## add show modal
+    def show_modal
+      @inventory = Inventory.find(params[:id])
+      respond_to do |format|
+        format.js
+      end
+    end
+    
   
     private
     
