@@ -24,7 +24,7 @@
         <th>Action</th>
       </tr>
 
-      <% @inventory.inventoryFoods.each do |inventory_food| %>
+      <% @inventory.each do |inventory_food| %>
       <tr>
         <td><%= inventory_food.food.name %></td>
         <td><%= inventory_food.quantity %></td>
