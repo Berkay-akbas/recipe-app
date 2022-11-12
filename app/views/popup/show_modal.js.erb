@@ -1,2 +1,2 @@
-$("#modal-window").find(".modal-content").html("<%= j (render 'new') %>");
-$("#modal-window").modal();
+$('#modal_content').html("<%= j render 'popup_content', popup: @inventories %>");
+$("#myModal").modal('show');
