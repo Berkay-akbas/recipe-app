@@ -2,13 +2,13 @@
   "entrypoints": {
     "modal": {
       "js": [
-        "/packs/js/modal-a97a33a322349f9ccc9c.js"
+        "/packs/js/modal-a5c18da9d6da709a4501.js"
       ],
       "js.map": [
-        "/packs/js/modal-a97a33a322349f9ccc9c.js.map"
+        "/packs/js/modal-a5c18da9d6da709a4501.js.map"
       ]
     }
   },
-  "modal.js": "/packs/js/modal-a97a33a322349f9ccc9c.js",
-  "modal.js.map": "/packs/js/modal-a97a33a322349f9ccc9c.js.map"
+  "modal.js": "/packs/js/modal-a5c18da9d6da709a4501.js",
+  "modal.js.map": "/packs/js/modal-a5c18da9d6da709a4501.js.map"
 }
