@@ -1,6 +1,6 @@
 # Recipe App
 
-> The **Recipe app** keeps track of all your recipes, ingredients, and inventory. It allows you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
+> This is a simple app designed to help you organize your recipes, ingredients, and inventory. You can save ingredients, track what you have in your inventory, create public recipes to share with others, and check the inventory and recipes to see whats missing and generate a shopping list. The app is built using Ruby on Rails and utilizes PostgreSQL as its database.
 
 ## Built with
 
